@@ -1,89 +1,270 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
+
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <meta name="description" content="jpang the UX Strategist &amp; Storyteller on data-driven marketing, empathetic design and travel wanders. Enter her world of creative work and interesting stories! #UserExperience #CuriousCreative #TravelerNotTourist">
+    <meta name="keywords" content="jpang, product design, user experience, interaction design, storytelling, UX strategy, travel, empathetic design">
+    <meta name="author" content="jpang">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.4.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.4.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
+    <title>Jessica Pang the Product Designer</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <script src="https://kit.fontawesome.com/86dc44cf8f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Plugin CSS 
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
     -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <!-- Theme CSS -->
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/interaction.css" rel="stylesheet">
+    
+     <!--favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img//favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <!--END favicon-->
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+        
+        @media screen and (max-width: 600px)  {
+        .profile-pic {
+            width: 30% !important;
+            }
+        .contact-icons {
+            font-size: 2em;
         }
-      });
-    </script>
-  </body>
+    }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-56ZG4FN');</script>
+    <!-- End Google Tag Manager -->
+    
+
+    <meta name="google-site-verification" content="dlk8mJiIPW96EDeKEu-XVOGeCRlahX0Cl6DSt7N6Ufw" />
+</head>
+
+<body id="page-top">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56ZG4FN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" >
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header" >
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">JPANG</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="travel.html">Travel</a>
+                    </li>
+                    <li>
+                        <a href="contact.html"><i class="fas fa-coffee"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                
+                <h4 class="text-faded">JESSICA PANG</h4>
+
+                <h2 style="line-height: 120%;">I design meaningful experiences and tell stories.</h2>
+                <br>
+                <img class="img-responsive profile-pic" style="margin: auto; width: 20%; border:none;" src="img/jessicapang-dp.png">
+                <hr class="primary">
+                <br>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll" style="font-family: 'Montserrat'">Welcome <i class="fa fa-caret-down"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+           <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">My Story</h2>
+                    
+                    <hr class="primary">
+                    <br>
+                    
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-4 text-center">
+                                    <div class="service-box">
+                                        <img src="img/jpang/MyStory-PD.svg" width=25% height=auto alt="Product Design">   
+                                        <h3 class="hero-heading-white"><span class="darkbg">Product Design</span></h3>
+                                        <br>
+                                        <p><span class="darkbg">8+ years designing B2B digital products and solving complex problems from travel to financial services</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 text-center">
+                                    <div class="service-box">
+                                        <img src="img/jpang/MyStory-Travel.svg" width=25% height=auto alt="Curious Traveler"> 
+                                        <h3 class="hero-heading-white"><span class="darkbg">Curious Traveler</span></h3>
+                                        <br>
+                                        <p><span class="darkbg">Marked parts of the Southern hemisphere, Central Europe, North American, and SEA territories</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4 text-center">
+                                    <div class="service-box">
+                                        <img src="img/jpang/MyStory-Creative.svg" width=25% height=auto alt="Creative"> 
+                                        <h3 class="hero-heading-white"><b><span class="darkbg">Creative Soul</span></b></h3>
+                                        <br>
+                                        <p>Always tinkering with side projects from a travel podcast <a class="mystory-link" href="https://wondertrekker.com/ " target="blank" style="text-decoration: underline">WonderTrekker </a>to illustrations under my artist name <a class="mystory-link" href="https://www.instagram.com/panguin.design/" target="blank" style="text-decoration: underline">Panguin</a></span></p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    <a href="about.html" class="btn btn-default btn-xl page-scroll">About Jess</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My latest work -->
+    <div class="container-fluid text-center" style="margin-top: 60px; margin-bottom: 20px; max-width: 1400px;">
+            <h2 class="section-heading">My Latest Work </h2>
+            <hr class="primary">
+          
+
+        <!-- ROW 1-->
+        <div class="row">
+            <a href="onboarding.html">
+                <div class="folio col-sm-4">
+                    <div class="card thumbnail-onboarding thumbnail-reveal"></div>
+                    <div class="card-text">
+                        <h3><i class="fa-regular fa-building"></i> Redesigning onboarding during COVID</h3>
+                        <p>Helping hoteliers onboard onto SiteMinder</p>
+                    </div>
+                </div>
+            </a>
+            <a href="api-dx.html">
+                <div class="folio col-sm-4" style="text-align: left;">
+                    <div class="card thumbnail-api thumbnail-reveal"></div>
+                    <div class="card-text">
+                        <h3><i class="fa-regular fa-money-bill-1"></i> Payment API portal design</h3>
+                        <p>Designing the developer experience for HSBC's API</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="conversation-design.html">
+                <div class="folio col-sm-4" style="text-align: left;">
+                    <div class="card thumbnail-convodesign thumbnail-reveal"></div>
+                    <div class="card-text">
+                        <h3><i class="fa-regular fa-message"></i> Dear bot, what's for dinner?</h3>
+                        <p>Help users discover restaurant offers on Messenger bot</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+
+    <section id ="contact" style="padding-bottom: 50px;">
+      
+        <!--<h2 class="section-heading">To coffee, ideas &amp; a good laugh.</h2>-->
+        <hr class="primary">
+        <br>
+        
+        <div class="row">
+            <div class="col-sm-4"></div>
+            
+            <div class="col-sm-4 ml-auto text-center">
+                <ul class="list-inline">
+                <li class="list-inline-item" style="padding: 0px 20px;">
+                    <a href="mailto:jpang0811@gmail.com" target="blank" style="color: #fff">
+                        <i class="fa fa-envelope sr-contact fa-3x contact-icons"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item" style="padding: 0px 20px;">
+                    <a href="https://hk.linkedin.com/in/jessica-pang" target="blank" style="color: #fff">
+                        <i class="fab fa-linkedin fa-3x sr-contact contact-icons"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item" style="padding: 0px 20px;">
+                    <a href="https://medium.com/@jpang0811" target="blank" style="color: #fff">
+                        <i class="fab fa-medium fa-3x sr-contact contact-icons"></i>
+                    </a>
+                </li>
+
+                </ul>
+                
+            </div>
+                
+        </div>
+      </div>
+      
+      <aside>
+        <div class="container text-center">
+            <p style="font-size: 14px;"><span style="font-size: 12px">&#x24B8;</span> jpang  &nbsp; &#8226; &nbsp; Hand coded with original illustrations</p>
+                
+        </div>
+        </aside>
+    </section>
+
+    
+    <!-- JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/reveal.js"></script>
+    
+
+</body>
+
 </html>
